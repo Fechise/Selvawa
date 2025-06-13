@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background">#4C1B14</color>
+    <color name="text_Selvawa">#EFE1D8</color>
+    <color name="primary">#2FC6C0</color>
+</resources>
