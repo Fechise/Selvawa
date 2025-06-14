@@ -3,4 +3,11 @@
     <string name="ir_a_la_pagina_principal">Ir a la página principal</string>
     <string name="selvawa">SELVAWA</string>
     <string name="a_jugar">A jugar</string>
+    <string name="instrucciones">Instrucciones:</string>
+    <string name="instrucciones_contenido">Responde a las preguntas pulsando la respuesta correcta. Si te equivocas, ¡no te preocupes! Solo diviértete y aprende.</string>
+    <string name="redes_sociales">Redes Sociales</string>
+    <string name="website_icon">Ícono del sitio web de Selvawa.</string>
+    <string name="facebook_icon">Ícono del Facebook de Selvawa.</string>
+    <string name="instagram_icon">Ícono del Instagram de Selvawa.</string>
+    <string name="selvawa_mascot">Imagen de la mascota de Selvawa</string>
 </resources>

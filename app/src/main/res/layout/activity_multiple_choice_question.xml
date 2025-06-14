@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fontFamily="@font/open_sans_regular"
+    tools:context=".MultipleChoiceQuestion">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/text_Selvawa"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <ImageView
+                android:id="@+id/imageViewSelvawaMascota"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="0dp"
+                android:contentDescription="@string/selvawa_mascot"
+                android:src="@drawable/ic_selvawa_mascot"
+                app:tint="@color/secondary" />
+
+            <Button
+                android:id="@+id/buttonIrAPaginaPrincipal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:backgroundTint="@color/primary"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="@string/ir_a_la_pagina_principal"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:backgroundTint="@color/primary"
+                app:cornerRadius="10dp" />
+
+            <TextView
+                android:id="@+id/textViewSelvawa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/accasia"
+                android:text="@string/selvawa"
+                android:textColor="@color/black"
+                android:textSize="60sp" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

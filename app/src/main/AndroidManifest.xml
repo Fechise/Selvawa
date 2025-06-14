@@ -13,10 +13,19 @@
         android:theme="@style/Theme.Selvawa"
         tools:targetApi="31">
         <activity
-            android:name="com.smartPackaging.selvawa.interactiveVideo.Presentation"
+            android:name=".ImageQuestion"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".TrueOrFalseQuestion"
+            android:exported="false" />
+        <activity
+            android:name=".MultipleChoiceQuestion"
+            android:exported="false" />
+        <activity
+            android:name="com.smartPackaging.selvawa.interactiveVideo.PresentationInteractiveVideo"
+            android:exported="false" />
+        <activity
+            android:name=".PresentationGame"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

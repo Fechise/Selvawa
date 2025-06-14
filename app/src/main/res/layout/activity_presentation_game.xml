@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fontFamily="@font/open_sans_regular"
+    tools:context=".PresentationGame">
+
+    <Button
+        android:id="@+id/buttonIrAPaginaPrincipal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/primary"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="@string/ir_a_la_pagina_principal"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:backgroundTint="@color/primary"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textViewSelvawa"
+        />
+
+    <TextView
+        android:id="@+id/textViewSelvawa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/accasia"
+        android:text="@string/selvawa"
+        android:textColor="@color/text_Selvawa"
+        android:textSize="64sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonIrAPaginaPrincipal"
+        app:layout_constraintBottom_toTopOf="@id/imageViewSelvawaMascota"/>
+
+    <ImageView
+        android:id="@+id/imageViewSelvawaMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/selvawa_mascot"
+        android:src="@drawable/ic_selvawa_mascot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewSelvawa"
+        app:layout_constraintBottom_toTopOf="@id/textViewInstrucciones"
+        app:tint="@color/secondary"/>
+
+
+    <TextView
+        android:id="@+id/textViewInstrucciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="@string/instrucciones"
+        android:textColor="@color/text_Selvawa"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewSelvawaMascota"
+        app:layout_constraintBottom_toTopOf="@id/textViewInstruccionesContenido"/>
+
+    <TextView
+        android:id="@+id/textViewInstruccionesContenido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_regular"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="@string/instrucciones_contenido"
+        android:textColor="@color/text_Selvawa"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewInstrucciones"
+        app:layout_constraintBottom_toTopOf="@id/buttonAJugar"
+        />
+
+    <Button
+        android:id="@+id/buttonAJugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="80dp"
+        android:backgroundTint="@null"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="@string/a_jugar"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:backgroundTint="@color/primary"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewInstruccionesContenido"
+        app:layout_constraintBottom_toTopOf="@id/textViewRedesSociales"
+        />
+
+    <TextView
+        android:id="@+id/textViewRedesSociales"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="@string/redes_sociales"
+        android:textColor="@color/text_Selvawa"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonAJugar"
+        app:layout_constraintBottom_toTopOf="@id/linearLayoutRedesSociales"
+        />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutRedesSociales"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewRedesSociales"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewInstagram"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:contentDescription="@string/facebook_icon"
+            android:src="@drawable/ic_facebook"
+            app:tint="@color/text_Selvawa"/>
+
+        <ImageView
+            android:id="@+id/imageViewFacebook"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:contentDescription="@string/instagram_icon"
+            android:src="@drawable/ic_instagram"
+            app:tint="@color/text_Selvawa"/>
+
+        <ImageView
+            android:id="@+id/imageViewWebsite"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:contentDescription="@string/website_icon"
+            android:src="@drawable/ic_website"
+            app:tint="@color/text_Selvawa"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
