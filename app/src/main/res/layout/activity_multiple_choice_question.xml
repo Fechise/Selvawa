@@ -61,6 +61,38 @@
                 android:textColor="@color/black"
                 android:textSize="60sp" />
 
+            <TextView
+                android:id="@+id/textViewEnunciadoPregunta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="@string/pregunta"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/textViewPreguntaContenido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_regular"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginTop="8dp" />
+
+            <GridLayout
+                android:id="@+id/gridLayoutOpciones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:columnCount="2"
+                android:rowCount="2">
+
+            </GridLayout>
+
+
 
         </LinearLayout>
 
