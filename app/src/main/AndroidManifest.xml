@@ -13,6 +13,30 @@
         android:theme="@style/Theme.Selvawa"
         tools:targetApi="31">
         <activity
+            android:name="com.smartPackaging.selvawa.landingPage.PresentationLandingPage"
+            android:exported="false" />
+        <activity
+            android:name="com.smartPackaging.selvawa.landingPage.LandingPage"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.smartPackaging.selvawa.interactiveVideo.Option1"
+            android:exported="false" />
+        <activity
+            android:name="com.smartPackaging.selvawa.interactiveVideo.IntroductionVideo"
+            android:exported="false" />
+        <activity
+            android:name=".GameResults"
+            android:exported="false" />
+        <activity
+            android:name=".GameQuestions"
+            android:exported="false" />
+        <activity
             android:name=".ImageQuestion"
             android:exported="false" />
         <activity
@@ -22,17 +46,8 @@
             android:name=".MultipleChoiceQuestion"
             android:exported="false" />
         <activity
-            android:name="com.smartPackaging.selvawa.interactiveVideo.PresentationInteractiveVideo"
-            android:exported="false" />
-        <activity
             android:name=".PresentationGame"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

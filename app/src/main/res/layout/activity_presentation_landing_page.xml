@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_provisional"
+    android:fontFamily="@font/poppins_regular"
+    tools:context="com.smartPackaging.selvawa.landingPage.PresentationLandingPage">
+
+    <TextView
+        android:id="@+id/textViewBienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Bienvenido a Selvawa"
+        android:fontFamily="@font/poppins_regular"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonComenzar"/>
+
+    <Button
+        android:id="@+id/buttonComenzar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comenzar"
+        android:backgroundTint="@color/background"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_regular"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/textViewBienvenida"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

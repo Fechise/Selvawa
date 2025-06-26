@@ -11,4 +11,15 @@
     <string name="instagram_icon">Ícono del Instagram de Selvawa.</string>
     <string name="selvawa_mascot">Imagen de la mascota de Selvawa</string>
     <string name="pregunta">Pregunta:</string>
+    <string name="contenido_pregunta">Ejemplo de Contenido de la Pregunta.</string>
+    <string name="salir_del_juego">Salir del juego</string>
+    <string name="imagen_de_pregunta_de_un_loro">Imagen de pregunta de un loro</string>
+    <string name="siguiente_pregunta">Siguiente pregunta</string>
+    <string name="ver_video">Ver Video</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="inicio">Inicio</string>
+    <string name="productos">Productos</string>
+    <string name="juego">Juego</string>
+    <string name="video">Video</string>
+    <string name="perfil">Perfil</string>
 </resources>

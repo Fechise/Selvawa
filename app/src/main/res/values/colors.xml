@@ -6,4 +6,8 @@
     <color name="text_Selvawa">#EFE1D8</color>
     <color name="primary">#2FC6C0</color>
     <color name="secondary">#E52429</color>
+    <color name="correct_answer">#8EFF8E</color>
+    <color name="wrong_answer" >#FF9C9C</color>
+    <color name="primary_provisional">#9DBB56</color>
+    <color name="primary_provisional_selected">#4C5828</color>
 </resources>

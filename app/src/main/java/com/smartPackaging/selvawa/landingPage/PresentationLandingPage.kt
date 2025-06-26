@@ -1,21 +1,17 @@
-package com.smartPackaging.selvawa.interactiveVideo
+package com.smartPackaging.selvawa.landingPage
 
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.smartPackaging.selvawa.game.R
 
-class PresentationInteractiveVideo : AppCompatActivity() {
-
-    private lateinit var buttonIniciar : Button
-
+class PresentationLandingPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_presentation_interactive_video)
+        setContentView(R.layout.activity_presentation_landing_page)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -30,13 +26,12 @@ class PresentationInteractiveVideo : AppCompatActivity() {
     }
 
     private fun initUIComponents() {
-        buttonIniciar = findViewById(R.id.buttonIniciar)
+        // Initialize UI components here
     }
 
     private fun initEventListeners() {
-        buttonIniciar.setOnClickListener {
-            intent = intent.setClass(this, IntroductionVideo::class.java)
-            startActivity(intent)
-        }
+        // Set up event listeners for UI components here
     }
+
+
 }
