@@ -2,14 +2,26 @@ package com.smartPackaging.selvawa.landingPage
 
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.smartPackaging.selvawa.game.PresentationGame
 import com.smartPackaging.selvawa.game.R
+import com.smartPackaging.selvawa.interactiveVideo.PresentationInteractiveVideo
+import com.smartPackaging.selvawa.products.Products
+import com.smartPackaging.selvawa.profile.Profile
 
 class LandingPage : AppCompatActivity() {
+
+    private lateinit var linearLayoutHome : LinearLayout
+    private lateinit var linearLayoutProductos : LinearLayout
+    private lateinit var linearLayoutJuego : LinearLayout
+    private lateinit var linearLayoutVideoInteractivo : LinearLayout
+    private lateinit var linearLayoutPerfil : LinearLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,11 +41,40 @@ class LandingPage : AppCompatActivity() {
     }
 
     private fun initUIComponents() {
-        // Initialize UI components here
+        linearLayoutHome = findViewById(R.id.linearLayoutHome)
+        linearLayoutProductos = findViewById(R.id.linearLayoutProductos)
+        linearLayoutJuego = findViewById(R.id.linearLayoutJuego)
+        linearLayoutVideoInteractivo = findViewById(R.id.linearLayoutVideoInteractivo)
+        linearLayoutPerfil = findViewById(R.id.linearLayoutPerfil)
     }
 
     private fun initEventListeners() {
-        // Set up event listeners for UI components here
+        linearLayoutHome.setOnClickListener {
+            selectBottomBarItem(0)
+            intent = intent.setClass(this, LandingPage::class.java)
+            startActivity(intent)
+        }
+        linearLayoutProductos.setOnClickListener {
+            selectBottomBarItem(1)
+            intent = intent.setClass(this, Products::class.java)
+            startActivity(intent)
+        }
+        linearLayoutJuego.setOnClickListener {
+            selectBottomBarItem(2)
+            intent = intent.setClass(this, PresentationGame::class.java)
+            startActivity(intent)
+            finish()
+        }
+        linearLayoutVideoInteractivo.setOnClickListener {
+            selectBottomBarItem(3)
+            intent = intent.setClass(this, PresentationInteractiveVideo::class.java)
+            startActivity(intent)
+        }
+        linearLayoutPerfil.setOnClickListener {
+            selectBottomBarItem(4)
+            intent = intent.setClass(this, Profile::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun selectBottomBarItem(selectedIndex: Int) {

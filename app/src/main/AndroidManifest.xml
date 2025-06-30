@@ -13,10 +13,13 @@
         android:theme="@style/Theme.Selvawa"
         tools:targetApi="31">
         <activity
-            android:name="com.smartPackaging.selvawa.landingPage.PresentationLandingPage"
+            android:name="com.smartPackaging.selvawa.profile.Profile"
             android:exported="false" />
         <activity
-            android:name="com.smartPackaging.selvawa.landingPage.LandingPage"
+            android:name="com.smartPackaging.selvawa.products.Products"
+            android:exported="false" />
+        <activity
+            android:name="com.smartPackaging.selvawa.landingPage.PresentationLandingPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.smartPackaging.selvawa.landingPage.LandingPage"
+            android:exported="true" />
         <activity
             android:name="com.smartPackaging.selvawa.interactiveVideo.Option1"
             android:exported="false" />
@@ -46,8 +52,26 @@
             android:name=".MultipleChoiceQuestion"
             android:exported="false" />
         <activity
-            android:name=".PresentationGame"
-            android:exported="false" />
+            android:name="com.smartPackaging.selvawa.game.PresentationGame"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="selvawa" android:host="presentationgame" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".interactiveVideo.PresentationInteractiveVideo"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="selvawa" android:host="presentationvideo" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

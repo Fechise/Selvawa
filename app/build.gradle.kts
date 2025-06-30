@@ -53,4 +53,7 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
+
+    // Otras
+    implementation("com.airbnb.android:lottie:6.4.0")
 }

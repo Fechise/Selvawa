@@ -5,15 +5,66 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@color/secondary_cream"
     android:fontFamily="@font/open_sans_regular"
     tools:context=".ImageQuestion">
 
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewSelvawa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/buttonSalirDelJuego"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/salir_del_juego"
+            android:src="@drawable/ic_arrow_left"
+            app:tint="@color/black" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textViewTituloBarra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="Trivia"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="invisible" />
+    </LinearLayout>
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewSelvawa"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="@color/text_Selvawa"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/primary_provisional_sky"
         app:cardCornerRadius="16dp"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,33 +74,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="24dp">
-
-            <ImageView
-                android:id="@+id/imageViewSelvawaMascota"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginBottom="0dp"
-                android:contentDescription="@string/selvawa_mascot"
-                android:src="@drawable/ic_selvawa_mascot"
-                app:tint="@color/secondary" />
-
-            <Button
-                android:id="@+id/buttonSalirDelJuego"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="0dp"
-                android:backgroundTint="@color/primary"
-                android:fontFamily="@font/open_sans_bold"
-                android:text="@string/salir_del_juego"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:backgroundTint="@color/primary"
-                app:cornerRadius="10dp" />
 
             <TextView
                 android:id="@+id/textViewSelvawa"
@@ -58,30 +86,38 @@
                 android:layout_margin="20dp"
                 android:fontFamily="@font/accasia"
                 android:text="@string/selvawa"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="60sp" />
+
+            <TextView
+                android:id="@+id/textViewPuntos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/puntos_0"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/imageViewAvatar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_avatar_default"
+                app:tint="@color/white" />
 
             <TextView
                 android:id="@+id/textViewEnunciadoPregunta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/open_sans_bold"
+                android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
                 android:text="@string/pregunta"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/textViewPreguntaContenido"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/open_sans_regular"
-                android:gravity="center"
-                android:text="@string/contenido_pregunta"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imageViewPregunta"
@@ -91,30 +127,25 @@
                 android:contentDescription="@string/imagen_de_pregunta_de_un_loro"
                 android:src="@drawable/img_question1" />
 
+            <TextView
+                android:id="@+id/textViewPreguntaContenido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="@string/contenido_pregunta"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+
             <GridLayout
                 android:id="@+id/gridLayoutOpciones"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:columnCount="2"
-                android:rowCount="2">
-
-            </GridLayout>
-
-            <Button
-                android:id="@+id/buttonSiguientePregunta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="0dp"
-                android:backgroundTint="@color/primary"
-                android:fontFamily="@font/open_sans_bold"
-                android:text="@string/siguiente_pregunta"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:backgroundTint="@color/primary"
-                app:cornerRadius="10dp" />
-
+                android:rowCount="2" />
 
         </LinearLayout>
 

@@ -13,19 +13,22 @@ import com.smartPackaging.selvawa.game.entity.EntityImageQuestion
 import com.smartPackaging.selvawa.game.entity.EntityMultipleChoiceQuestion
 import com.smartPackaging.selvawa.game.entity.EntityTrueFalseQuestion
 import kotlinx.coroutines.launch
+import com.smartPackaging.selvawa.landingPage.LandingPage
 
 class PresentationGame : AppCompatActivity() {
 
     /// Beneficios de ingredientes, principio de aprendizaje colectivo. Aprender sobre la nutrición
 
     private lateinit var buttonAJugar: Button
-    private lateinit var buttonSalirDelJuego: Button
+    private lateinit var buttonIrAPaginaPrincipal: Button
     private lateinit var db: AppDatabase
+    private var avatar: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_presentation_game)
+        avatar = intent.getStringExtra("avatar")
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -88,6 +91,7 @@ class PresentationGame : AppCompatActivity() {
 
     private fun initUIComponents() {
         buttonAJugar = findViewById(R.id.buttonAJugar)
+        buttonIrAPaginaPrincipal = findViewById(R.id.buttonIrAPaginaPrincipal)
     }
 
     private fun initEventListeners() {
@@ -101,9 +105,16 @@ class PresentationGame : AppCompatActivity() {
 
                 val intent = Intent(this@PresentationGame, GameQuestions::class.java)
                 intent.putParcelableArrayListExtra("preguntas", ArrayList(preguntas))
+                intent.putExtra("avatar", avatar)
+                intent.putExtra("puntos", 0)
                 startActivity(intent)
                 finish()
             }
+        }
+        buttonIrAPaginaPrincipal.setOnClickListener {
+            val intent = Intent(this, LandingPage::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

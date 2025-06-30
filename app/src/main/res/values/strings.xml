@@ -22,4 +22,6 @@
     <string name="juego">Juego</string>
     <string name="video">Video</string>
     <string name="perfil">Perfil</string>
+    <string name="comenzar">Comenzar</string>
+    <string name="puntos_0">Puntos: 0</string>
 </resources>
