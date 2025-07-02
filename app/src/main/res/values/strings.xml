@@ -24,4 +24,10 @@
     <string name="perfil">Perfil</string>
     <string name="comenzar">Comenzar</string>
     <string name="puntos_0">Puntos: 0</string>
+    <string name="bienvenido_a_selvawa">Bienvenido a Selvawa</string>
+    <string name="descubre_productos_sostenibles_y_cuida_el_planeta_con_cada_elecci_n">Descubre productos sostenibles y cuida el planeta con cada elección</string>
+    <string name="has_terminado_el_juego">¡Has terminado el juego!</string>
+    <string name="puntos_obtenidos_0">Puntos obtenidos: 0</string>
+    <string name="volver_a_jugar">Volver a jugar</string>
+    <string name="puntos_obtenidos">Puntos obtenidos: %1$d</string>
 </resources>

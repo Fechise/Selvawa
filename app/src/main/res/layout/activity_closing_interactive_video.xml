@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Presentación del video interactivo -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/primary_provisional_sun"
     android:fontFamily="@font/poppins_medium"
-    tools:context="com.smartPackaging.selvawa.interactiveVideo.PresentationInteractiveVideo">
+    tools:context="com.smartPackaging.selvawa.interactiveVideo.ClosingInteractiveVideo">
 
     <Button
         android:id="@+id/buttonIrAPaginaPrincipal"
@@ -30,20 +29,18 @@
         android:id="@+id/textViewSelvawa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_margin="20dp"
         android:fontFamily="@font/accasia"
-        android:textAllCaps="true"
-        android:text="@string/app_name"
+        android:text="@string/selvawa"
         android:textColor="@color/secondary_cream"
         android:textSize="68sp"
-        app:layout_constraintTop_toBottomOf="@id/buttonIrAPaginaPrincipal"
+        app:layout_constraintBottom_toTopOf="@id/cardViewCierre"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-
+        app:layout_constraintTop_toBottomOf="@id/buttonIrAPaginaPrincipal" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewPresentacion"
+        android:id="@+id/cardViewCierre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -53,92 +50,53 @@
         app:cardBackgroundColor="@color/secondary_cream"
         app:cardCornerRadius="10dp"
         app:cardElevation="0dp"
-        app:layout_constraintTop_toBottomOf="@id/textViewSelvawa"
+        app:layout_constraintBottom_toTopOf="@id/imageViewGracias"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewSelvawa">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:padding="20dp">
+            android:orientation="vertical"
+            android:padding="24dp">
 
             <TextView
-                android:id="@+id/textViewTitulo"
+                android:id="@+id/textViewTituloCierre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Historia detrás de los productos"
+                android:gravity="center"
+                android:text="¡Has terminado la experiencia!"
                 android:textColor="@color/black"
                 android:textSize="22sp"
-                android:textStyle="bold"
-                android:gravity="center" />
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textViewDescripcion"
+                android:id="@+id/textViewMensajeCierre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Conoce de cerca a quienes hacen posible cada alimento.\nTú eliges el camino.\nDuración: 5-10 minutos."
+                android:gravity="center"
+                android:text="Gracias por participar y descubrir la historia detrás de los productos. ¡Esperamos que hayas disfrutado el recorrido!"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                android:gravity="center" />
+                android:textSize="18sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <ImageView
-        android:id="@+id/imageViewBearPeeking"
-        android:layout_width="120dp"
+        android:id="@+id/imageViewGracias"
+        android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="-40dp"
-        android:contentDescription="@string/selvawa_mascot"
+        android:layout_marginTop="-200dp"
+        android:contentDescription="Icono de agradecimiento"
         android:src="@drawable/img_bear_peeking"
-        app:layout_constraintBottom_toTopOf="@id/cardViewPresentacion"
+        app:layout_constraintBottom_toTopOf="@id/cardViewCierre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/cardViewPresentacion" />
-
-    <ImageView
-        android:id="@+id/imageViewPlay"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/ic_play_circle"
-        android:contentDescription="Icono de play"
-        app:layout_constraintTop_toBottomOf="@id/cardViewPresentacion"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@color/secondary_cream" />
-
-    <ImageView
-        android:id="@+id/imageViewWarning"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/ic_alert_circle"
-        android:contentDescription="Icono de advertencia"
-        app:layout_constraintTop_toBottomOf="@id/imageViewPlay"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@color/secondary_cream" />
-
-    <TextView
-        android:id="@+id/textViewAdvertencia"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="¡Este video tiene elementos interactivos! Toca cuando se te indique."
-        android:textColor="@color/secondary_cream"
-        android:textSize="16sp"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/imageViewWarning"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/cardViewCierre" />
 
     <LinearLayout
         android:id="@+id/layoutRedesSociales"
@@ -150,7 +108,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewAdvertencia">
+        app:layout_constraintTop_toBottomOf="@id/cardViewCierre">
 
         <TextView
             android:id="@+id/textViewRedesSociales"

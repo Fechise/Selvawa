@@ -49,11 +49,11 @@ class LandingPage : AppCompatActivity() {
     }
 
     private fun initEventListeners() {
-        linearLayoutHome.setOnClickListener {
-            selectBottomBarItem(0)
-            intent = intent.setClass(this, LandingPage::class.java)
-            startActivity(intent)
-        }
+//        linearLayoutHome.setOnClickListener {
+//            selectBottomBarItem(0)
+//            intent = intent.setClass(this, LandingPage::class.java)
+//            startActivity(intent)
+//        }
         linearLayoutProductos.setOnClickListener {
             selectBottomBarItem(1)
             intent = intent.setClass(this, Products::class.java)
@@ -107,5 +107,4 @@ class LandingPage : AppCompatActivity() {
             }
         }
     }
-
 }

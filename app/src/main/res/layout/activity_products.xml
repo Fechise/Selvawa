@@ -5,6 +5,668 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fontFamily="@font/poppins_medium"
     tools:context="com.smartPackaging.selvawa.products.Products">
+
+    <!-- Barra superior -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@color/primary_provisional"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewMenu"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_menu_wider"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/productos"
+            android:textColor="@android:color/white"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/linearLayoutNavigationBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Columna izquierda: Scroll con la tabla -->
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="INFORME NUTRICIONAL"
+                            android:textColor="@color/primary_provisional"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Tamaño por porción"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="5g" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Porciones por envase"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="60 aprox." />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Energía (calorías) por porción"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="0 Kj | 0 Cal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Energía de grasas (calorías de grasa)"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="0 Kj | 0 Cal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="% de valor diario*"
+                            android:textStyle="italic" />
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="Grasa total" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0g" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0%" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="Grasa total" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0g" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0%" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="Grasa saturada" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0g" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0%" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="Grasa trans" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0g" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="-" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="Grasa Monoinsaturada" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0g" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="-" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="Grasa Poliinsaturada" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0g" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="-" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="Colesterol" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0mg" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="-" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="Sodio" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="15mg" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="1%" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="Carbohidratos totales" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="1g" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0%" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="Fibra dietética" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0g" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0%" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="Azúcares" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="1g" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="-" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="Proteína" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0g" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/cell_border"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:padding="4dp"
+                                    android:text="0%" />
+                            </TableRow>
+                        </TableLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="*Porcentaje de valores diarias basados en una dieta de 2000 calorías."
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:text="INGREDIENTES: Ají Habanero en aceite de sacha inchi, jengibre, albahaca, sacha cilantro, flor de sal."
+                            android:textSize="14sp"
+                            android:textStyle="italic" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!-- Columna derecha: Imagen fija -->
+        <ImageView
+            android:id="@+id/imageViewAjiAmasanga"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_aji_amasanga_cut" />
+    </LinearLayout>
+
+    <!-- Barra de navegación inferior -->
+    <LinearLayout
+        android:id="@+id/linearLayoutNavigationBar"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@color/primary_provisional"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewInicio"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_inicio"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/textViewInicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/inicio"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutProductos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewProductos"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_productos"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/textViewProductos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/productos"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutJuego"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewJuego"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_juego"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/textViewJuego"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/juego"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutVideoInteractivo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewVideoInteractivo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_video_interactivo"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/textViewVideoInteractivo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/video"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPerfil"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewPerfil"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_user" />
+
+            <TextView
+                android:id="@+id/textViewPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/perfil"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

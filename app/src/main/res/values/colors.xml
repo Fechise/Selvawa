@@ -7,12 +7,13 @@
     <color name="secondary_cream_transparent">#25EFE1D8</color>
     <color name="primary">#2FC6C0</color>
     <color name="secondary">#E52429</color>
-    <color name="correct_answer">#8EFF8E</color>
-    <color name="wrong_answer" >#FF9C9C</color>
+    <color name="correct_answer">#027C02</color>
+    <color name="wrong_answer" >#680000</color>
     <color name="primary_provisional">#9DBB56</color>
     <color name="primary_provisional_selected">#4C5828</color>
     <color name="primary_provisional_bright">#9DBBAA</color>
     <color name="primary_provisional_sky">#277C73</color>
+    <color name="primary_provisional_sun">#E99822</color>
     <color name="black_transparent">#66000000</color>
     <color name="white_transparent">#20FFFFFF</color>
 </resources>
