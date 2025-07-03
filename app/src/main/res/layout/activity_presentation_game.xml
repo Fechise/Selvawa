@@ -43,7 +43,7 @@
                 android:fontFamily="@font/accasia"
                 android:text="@string/selvawa"
                 android:textColor="@color/secondary_cream"
-                android:textSize="68sp" />
+                android:textSize="56sp" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardViewInstrucciones"
