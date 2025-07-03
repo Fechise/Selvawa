@@ -37,7 +37,7 @@ class Products : AppCompatActivity() {
     private fun initUI() {
         initUIComponents()
         initEventListeners()
-        selectBottomBarItem(0)
+        selectBottomBarItem(1)
     }
 
     private fun initUIComponents() {
@@ -92,7 +92,7 @@ class Products : AppCompatActivity() {
             R.id.textViewVideoInteractivo,
             R.id.textViewPerfil
         )
-        val selectedColor = getColor(R.color.primary_provisional_selected)
+        val selectedColor = getColor(R.color.text_secondary_red)
         val defaultColor = getColor(R.color.white)
 
         for (i in iconIds.indices) {

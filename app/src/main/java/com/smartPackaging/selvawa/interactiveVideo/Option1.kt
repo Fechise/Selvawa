@@ -17,7 +17,6 @@ class Option1 : AppCompatActivity() {
 
     private lateinit var videoView: VideoView
     private lateinit var buttonCerrar: ImageButton
-    private lateinit var cardOpciones: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +38,6 @@ class Option1 : AppCompatActivity() {
     private fun initUIComponents() {
         videoView = findViewById(R.id.videoView)
         buttonCerrar = findViewById(R.id.buttonCerrar)
-        cardOpciones = findViewById(R.id.cardOpciones)
-        cardOpciones.visibility = View.GONE
     }
 
     private fun initEventListeners() {
@@ -66,7 +63,9 @@ class Option1 : AppCompatActivity() {
         val videoUri = "android.resource://${packageName}/raw/video_option1".toUri()
         videoView.setVideoURI(videoUri)
         videoView.setOnCompletionListener {
-            cardOpciones.visibility = View.VISIBLE
+            val intent = Intent(this, ClosingInteractiveVideo::class.java)
+            startActivity(intent)
+            finish()
         }
         videoView.start()
     }

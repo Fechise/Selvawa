@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.smartPackaging.selvawa.game.entity.EntityImageQuestion
 import com.smartPackaging.selvawa.game.entity.EntityMultipleChoiceQuestion
-import com.smartPackaging.selvawa.game.entity.EntityTrueFalseQuestion
+import com.smartPackaging.selvawa.game.entity.EntityTrueOrFalseQuestion
 
 class GameQuestions : AppCompatActivity() {
 
@@ -56,12 +56,14 @@ class GameQuestions : AppCompatActivity() {
                     putExtra("respuestaCorrecta", pregunta.respuestaCorrecta)
                 }
             }
-            is EntityTrueFalseQuestion -> {
+
+            is EntityTrueOrFalseQuestion -> {
                 Intent(this, TrueOrFalseQuestion::class.java).apply {
                     putExtra("contenido", pregunta.contenido)
                     putExtra("esVerdadero", pregunta.esVerdadero)
                 }
             }
+
             is EntityImageQuestion -> {
                 Intent(this, ImageQuestion::class.java).apply {
                     putExtra("contenido", pregunta.contenido)
@@ -73,6 +75,7 @@ class GameQuestions : AppCompatActivity() {
                     putExtra("respuestaCorrecta", pregunta.respuestaCorrecta)
                 }
             }
+
             else -> return
         }
         intent.putExtra("indice", indiceActual)

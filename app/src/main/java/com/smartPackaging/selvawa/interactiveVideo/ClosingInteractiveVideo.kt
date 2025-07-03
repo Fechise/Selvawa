@@ -1,6 +1,7 @@
 package com.smartPackaging.selvawa.interactiveVideo
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -14,7 +15,8 @@ import com.smartPackaging.selvawa.landingPage.LandingPage
 class ClosingInteractiveVideo : AppCompatActivity() {
 
     private lateinit var buttonIrAPaginaPrincipal: Button
-    private lateinit var imageViewPlay : ImageView
+    private lateinit var imageViewFacebook: ImageView
+    private lateinit var imageViewInstagram: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +37,8 @@ class ClosingInteractiveVideo : AppCompatActivity() {
 
     private fun initUIComponents() {
         buttonIrAPaginaPrincipal = findViewById(R.id.buttonIrAPaginaPrincipal)
-        imageViewPlay = findViewById(R.id.imageViewPlay)
+        imageViewFacebook = findViewById(R.id.imageViewFacebook)
+        imageViewInstagram = findViewById(R.id.imageViewInstagram)
     }
 
     private fun initEventListeners() {
@@ -44,10 +47,13 @@ class ClosingInteractiveVideo : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        imageViewPlay.setOnClickListener {
-            val intent = Intent(this, IntroductionVideo::class.java)
+        imageViewFacebook.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/p/Selvawa-100067903841923/?locale=es_LA"))
             startActivity(intent)
-            finish()
+        }
+        imageViewInstagram.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/selvawamazonia/"))
+            startActivity(intent)
         }
     }
 }

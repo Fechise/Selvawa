@@ -12,4 +12,7 @@ interface MultipleChoiceQuestionDAO {
 
     @Insert
     suspend fun insertar(multipleChoiceQuestion: EntityMultipleChoiceQuestion)
+
+    @Insert
+    suspend fun insertar(multipleChoiceQuestions: List<EntityMultipleChoiceQuestion>)
 }

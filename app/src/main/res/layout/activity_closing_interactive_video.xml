@@ -130,7 +130,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageViewInstagram"
+                android:id="@+id/imageViewFacebook"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
@@ -139,7 +139,7 @@
                 app:tint="@color/secondary_cream" />
 
             <ImageView
-                android:id="@+id/imageViewFacebook"
+                android:id="@+id/imageViewInstagram"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"

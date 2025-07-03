@@ -12,4 +12,7 @@ interface ImageQuestionDAO {
 
     @Insert
     suspend fun insertar(imageQuestion: EntityImageQuestion)
+
+    @Insert
+    suspend fun insertar(imageQuestions: List<EntityImageQuestion>)
 }

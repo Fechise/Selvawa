@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlin.text.toInt
 
 class TrueOrFalseQuestion : AppCompatActivity() {
 
@@ -68,9 +69,13 @@ class TrueOrFalseQuestion : AppCompatActivity() {
             button.text = opcion
             button.background = ContextCompat.getDrawable(this, R.drawable.bg_button_game_option)
             button.setTextColor(ContextCompat.getColor(this, R.color.white))
-            val params = GridLayout.LayoutParams()
-            params.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
-            params.setMargins(4, 4, 4, 4)
+            val scale = resources.displayMetrics.density
+            val widthPx = (120 * scale + 0.5f).toInt()
+            val params = GridLayout.LayoutParams().apply {
+                width = widthPx
+                height = GridLayout.LayoutParams.WRAP_CONTENT
+                setMargins(8, 8, 8, 8)
+            }
             button.layoutParams = params
             gridLayoutOpciones.addView(button)
         }
@@ -115,7 +120,7 @@ class TrueOrFalseQuestion : AppCompatActivity() {
                                     putExtra("respuestaCorrecta", siguiente.respuestaCorrecta)
                                 }
                             }
-                            is com.smartPackaging.selvawa.game.entity.EntityTrueFalseQuestion -> {
+                            is com.smartPackaging.selvawa.game.entity.EntityTrueOrFalseQuestion -> {
                                 Intent(this, TrueOrFalseQuestion::class.java).apply {
                                     putExtra("contenido", siguiente.contenido)
                                     putExtra("esVerdadero", siguiente.esVerdadero)
@@ -148,7 +153,7 @@ class TrueOrFalseQuestion : AppCompatActivity() {
                         startActivity(resultIntent)
                         finish()
                     }
-                }, 6000)
+                }, 4500)
             }
         }
         buttonSalirDelJuego.setOnClickListener {

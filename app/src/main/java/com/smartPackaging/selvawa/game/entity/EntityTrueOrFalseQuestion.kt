@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 @Entity(tableName = "true_false_question")
-data class EntityTrueFalseQuestion(
+data class EntityTrueOrFalseQuestion(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val contenido: String,
     val esVerdadero: Boolean

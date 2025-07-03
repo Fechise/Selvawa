@@ -1,8 +1,10 @@
 package com.smartPackaging.selvawa.game
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +17,8 @@ class GameResults : AppCompatActivity() {
     private lateinit var buttonVolverAJugar: Button
     private lateinit var buttonIrAPaginaPrincipal: Button
     private lateinit var textViewPuntos: TextView
+    private lateinit var imageViewFacebook: ImageView
+    private lateinit var imageViewInstagram: ImageView
     private var puntos: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +44,8 @@ class GameResults : AppCompatActivity() {
         buttonVolverAJugar = findViewById(R.id.buttonVolverAJugar)
         buttonIrAPaginaPrincipal = findViewById(R.id.buttonIrAPaginaPrincipal)
         textViewPuntos = findViewById(R.id.textViewPuntos)
+        imageViewFacebook = findViewById(R.id.imageViewFacebook)
+        imageViewInstagram = findViewById(R.id.imageViewInstagram)
     }
 
     private fun initEventListeners() {
@@ -52,6 +58,14 @@ class GameResults : AppCompatActivity() {
             val intent = Intent(this, LandingPage::class.java)
             startActivity(intent)
             finish()
+        }
+        imageViewFacebook.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/p/Selvawa-100067903841923/?locale=es_LA"))
+            startActivity(intent)
+        }
+        imageViewInstagram.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/selvawamazonia/"))
+            startActivity(intent)
         }
     }
 
