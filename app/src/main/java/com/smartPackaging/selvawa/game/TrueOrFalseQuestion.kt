@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import kotlin.text.toInt
 
 class TrueOrFalseQuestion : AppCompatActivity() {
 
@@ -92,7 +91,7 @@ class TrueOrFalseQuestion : AppCompatActivity() {
                 val respuestaUsuario = (i == 0) // 0: Verdadero, 1: Falso
                 val mensaje = if (respuestaUsuario == esVerdadero) "¡Pica y pasa!" else "¡Tu snack pasa al siguiente!"
                 val lottie = if (respuestaUsuario == esVerdadero) R.raw.celebration else R.raw.sad_face
-                val dialog = AvisoDialogFragment(mensaje, lottie)
+                val dialog = PopupDialogFragment(mensaje, lottie)
                 if (respuestaUsuario == esVerdadero) {
                     button.background = ContextCompat.getDrawable(this, R.drawable.bg_button_game_option_correct)
                     puntos += 2

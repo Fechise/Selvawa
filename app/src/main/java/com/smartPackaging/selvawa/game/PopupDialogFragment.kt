@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.airbnb.lottie.LottieAnimationView
-import com.smartPackaging.selvawa.game.R
 
-class AvisoDialogFragment(
+class PopupDialogFragment(
     private val mensaje: String,
     private val lottieRes: Int = R.raw.celebration
 ) : DialogFragment() {

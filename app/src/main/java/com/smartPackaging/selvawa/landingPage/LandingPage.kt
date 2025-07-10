@@ -58,6 +58,7 @@ class LandingPage : AppCompatActivity() {
             selectBottomBarItem(1)
             intent = intent.setClass(this, Products::class.java)
             startActivity(intent)
+            finish()
         }
         linearLayoutJuego.setOnClickListener {
             selectBottomBarItem(2)
@@ -69,11 +70,13 @@ class LandingPage : AppCompatActivity() {
             selectBottomBarItem(3)
             intent = intent.setClass(this, PresentationInteractiveVideo::class.java)
             startActivity(intent)
+            finish()
         }
         linearLayoutPerfil.setOnClickListener {
             selectBottomBarItem(4)
             intent = intent.setClass(this, Profile::class.java)
             startActivity(intent)
+            finish()
         }
     }
 

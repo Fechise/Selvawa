@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import kotlin.text.toInt
 
 class MultipleChoiceQuestion : AppCompatActivity() {
 
@@ -98,7 +97,7 @@ class MultipleChoiceQuestion : AppCompatActivity() {
                 val esCorrecta = (i == respuestaCorrecta)
                 val mensaje = if (esCorrecta) "¡Pica y pasa!" else "¡Tu snack pasa al siguiente!"
                 val lottie = if (esCorrecta) R.raw.celebration else R.raw.sad_face
-                val dialog = AvisoDialogFragment(mensaje, lottie)
+                val dialog = PopupDialogFragment(mensaje, lottie)
                 if (esCorrecta) {
                     button.background = ContextCompat.getDrawable(this, R.drawable.bg_button_game_option_correct)
                     puntos += 2

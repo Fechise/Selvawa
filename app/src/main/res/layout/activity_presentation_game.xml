@@ -23,6 +23,8 @@
             android:padding="16dp"
             android:gravity="center_horizontal">
 
+
+
             <Button
                 android:id="@+id/buttonIrAPaginaPrincipal"
                 android:layout_width="wrap_content"
@@ -45,6 +47,14 @@
                 android:textColor="@color/secondary_cream"
                 android:textSize="56sp" />
 
+            <ImageView
+                android:id="@+id/imageViewBearPeeking"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="-120dp"
+                android:contentDescription="@string/selvawa_mascot"
+                android:src="@drawable/img_bear_peeking" />
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardViewInstrucciones"
                 android:layout_width="match_parent"
@@ -56,6 +66,7 @@
                 app:cardBackgroundColor="@color/secondary_cream"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="0dp">
+
 
                 <LinearLayout
                     android:id="@+id/linearLayoutInstrucciones"
@@ -90,14 +101,6 @@
                         android:textSize="16sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
-            <ImageView
-                android:id="@+id/imageViewBearPeeking"
-                android:layout_width="120dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="-40dp"
-                android:contentDescription="@string/selvawa_mascot"
-                android:src="@drawable/img_bear_peeking" />
 
             <Button
                 android:id="@+id/buttonAJugar"
