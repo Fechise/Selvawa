@@ -111,8 +111,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginTop="8dp"
-                    android:src="@drawable/ic_avatar_default"
-                    app:tint="@color/white" />
+                    android:src="@drawable/ic_avatar_default" />
 
                 <TextView
                     android:id="@+id/textViewEnunciadoPregunta"

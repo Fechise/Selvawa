@@ -109,7 +109,7 @@
                 android:layout_margin="40dp"
                 android:backgroundTint="@null"
                 android:fontFamily="@font/poppins_medium"
-                android:text="@string/a_jugar"
+                android:text="A Jugar"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"

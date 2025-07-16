@@ -20,10 +20,10 @@ import com.smartPackaging.selvawa.game.EmptyOption
 class IntroductionVideo : AppCompatActivity() {
 
     private lateinit var videoView: VideoView
+    private lateinit var buttonMermeladaPinaIshpingoZanahoria: Button
+    private lateinit var buttonAjiFrito: Button
     private lateinit var buttonAjiJalapeno: Button
-    private lateinit var buttonAjiHabanero: Button
-    private lateinit var buttonMermeladaPina: Button
-    private lateinit var buttonMermeladaJamaica: Button
+    private lateinit var buttonMermeladaJamaicaGuayabaChia: Button
     private lateinit var buttonCerrar: ImageButton
     private lateinit var cardOpciones: CardView
     private lateinit var botones: List<Button>
@@ -48,18 +48,18 @@ class IntroductionVideo : AppCompatActivity() {
 
     private fun initUIComponents() {
         videoView = findViewById(R.id.videoView)
+        buttonMermeladaPinaIshpingoZanahoria = findViewById(R.id.buttonMermeladaPinaIshpingoZanahoria)
+        buttonAjiFrito = findViewById(R.id.buttonAjiFrito)
         buttonAjiJalapeno = findViewById(R.id.buttonAjiJalapeno)
-        buttonAjiHabanero = findViewById(R.id.buttonAjiHabanero)
-        buttonMermeladaPina = findViewById(R.id.buttonMermeladaPina)
-        buttonMermeladaJamaica = findViewById(R.id.buttonMermeladaJamaica)
+        buttonMermeladaJamaicaGuayabaChia = findViewById(R.id.buttonMermeladaJamaicaGuayabaChia)
         buttonCerrar = findViewById(R.id.buttonCerrar)
         cardOpciones = findViewById(R.id.cardOpciones)
         cardOpciones.visibility = View.GONE
         botones = listOf(
+            buttonMermeladaPinaIshpingoZanahoria,
+            buttonAjiFrito,
             buttonAjiJalapeno,
-            buttonAjiHabanero,
-            buttonMermeladaPina,
-            buttonMermeladaJamaica
+            buttonMermeladaJamaicaGuayabaChia
         )
         blink = AlphaAnimation(1.0f, 0.3f).apply {
             duration = 2000
@@ -79,9 +79,9 @@ class IntroductionVideo : AppCompatActivity() {
             stopBlinking()
             startActivity(Intent(this, EmptyOption::class.java))
         }
-        buttonAjiHabanero.setOnClickListener(emptyOptionListener)
-        buttonMermeladaPina.setOnClickListener(emptyOptionListener)
-        buttonMermeladaJamaica.setOnClickListener(emptyOptionListener)
+        buttonMermeladaPinaIshpingoZanahoria.setOnClickListener(emptyOptionListener)
+        buttonAjiFrito.setOnClickListener(emptyOptionListener)
+        buttonMermeladaJamaicaGuayabaChia.setOnClickListener(emptyOptionListener)
     }
 
     private fun playIntroVideo() {

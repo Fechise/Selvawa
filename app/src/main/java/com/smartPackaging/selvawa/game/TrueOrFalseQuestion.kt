@@ -12,16 +12,19 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+
 class TrueOrFalseQuestion : AppCompatActivity() {
 
     private lateinit var buttonSalirDelJuego: ImageView
     private lateinit var textViewPreguntaContenido: TextView
     private lateinit var gridLayoutOpciones: GridLayout
     private lateinit var imageViewAvatar: ImageView
+    private lateinit var avatares: ArrayList<String>
     private var avatar: String? = null
     private var puntos: Int = 0
     private var contenido: String = ""
     private var esVerdadero: Boolean = true
+    private var jugadorActual: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +49,9 @@ class TrueOrFalseQuestion : AppCompatActivity() {
         esVerdadero = intent.getBooleanExtra("esVerdadero", true)
         avatar = intent.getStringExtra("avatar")
         puntos = intent.getIntExtra("puntos", 0)
+        avatares = intent.getStringArrayListExtra("avatares") ?: arrayListOf("img_player1")
+        jugadorActual = intent.getIntExtra("jugadorActual", 0)
+        avatar = avatares[jugadorActual]
     }
 
     private fun initUIComponents() {
@@ -57,9 +63,13 @@ class TrueOrFalseQuestion : AppCompatActivity() {
         val textViewPuntos = findViewById<TextView>(R.id.textViewPuntos)
         textViewPuntos.text = "Puntos: $puntos"
 
+        avatar = intent.getStringExtra("avatar")
         avatar?.let {
             val resId = resources.getIdentifier(it, "drawable", packageName)
-            if (resId != 0) imageViewAvatar.setImageResource(resId)
+            if (resId != 0) {
+                imageViewAvatar.setImageResource(resId)
+                imageViewAvatar.clearColorFilter() // Quita el tint si lo tiene
+            }
         }
         val opciones = listOf("Verdadero", "Falso")
         gridLayoutOpciones.removeAllViews()
@@ -89,22 +99,34 @@ class TrueOrFalseQuestion : AppCompatActivity() {
                     gridLayoutOpciones.getChildAt(j).isEnabled = false
                 }
                 val respuestaUsuario = (i == 0) // 0: Verdadero, 1: Falso
-                val mensaje = if (respuestaUsuario == esVerdadero) "¡Pica y pasa!" else "¡Tu snack pasa al siguiente!"
-                val lottie = if (respuestaUsuario == esVerdadero) R.raw.celebration else R.raw.sad_face
+                val mensaje =
+                    if (respuestaUsuario == esVerdadero) "¡Pica y pasa!" else "¡Tu snack pasa al siguiente!"
+                val lottie =
+                    if (respuestaUsuario == esVerdadero) R.raw.celebration else R.raw.sad_face
                 val dialog = PopupDialogFragment(mensaje, lottie)
                 if (respuestaUsuario == esVerdadero) {
-                    button.background = ContextCompat.getDrawable(this, R.drawable.bg_button_game_option_correct)
+                    button.background =
+                        ContextCompat.getDrawable(this, R.drawable.bg_button_game_option_correct)
                     puntos += 2
                 } else {
-                    button.background = ContextCompat.getDrawable(this, R.drawable.bg_button_game_option_wrong)
-                    val buttonCorrecto = gridLayoutOpciones.getChildAt(if (esVerdadero) 0 else 1) as Button
-                    buttonCorrecto.setBackgroundColor(ContextCompat.getColor(this, R.color.correct_answer))
+                    button.background =
+                        ContextCompat.getDrawable(this, R.drawable.bg_button_game_option_wrong)
+                    val buttonCorrecto =
+                        gridLayoutOpciones.getChildAt(if (esVerdadero) 0 else 1) as Button
+                    buttonCorrecto.setBackgroundColor(
+                        ContextCompat.getColor(
+                            this,
+                            R.color.correct_answer
+                        )
+                    )
                 }
                 dialog.show(supportFragmentManager, "aviso")
                 // Ir a la siguiente pregunta después de un pequeño delay
                 button.postDelayed({
                     dialog.dismiss()
-                    val preguntas = intent.getParcelableArrayListExtra<android.os.Parcelable>("preguntas")
+                    val preguntas =
+                        intent.getParcelableArrayListExtra<android.os.Parcelable>("preguntas")
+                    val siguienteJugador = (jugadorActual + 1) % avatares.size
                     val indice = intent.getIntExtra("indice", 0)
                     if (preguntas != null && indice + 1 < preguntas.size) {
                         val siguiente = preguntas[indice + 1]
@@ -119,12 +141,14 @@ class TrueOrFalseQuestion : AppCompatActivity() {
                                     putExtra("respuestaCorrecta", siguiente.respuestaCorrecta)
                                 }
                             }
+
                             is com.smartPackaging.selvawa.game.entity.EntityTrueOrFalseQuestion -> {
                                 Intent(this, TrueOrFalseQuestion::class.java).apply {
                                     putExtra("contenido", siguiente.contenido)
                                     putExtra("esVerdadero", siguiente.esVerdadero)
                                 }
                             }
+
                             is com.smartPackaging.selvawa.game.entity.EntityImageQuestion -> {
                                 Intent(this, ImageQuestion::class.java).apply {
                                     putExtra("contenido", siguiente.contenido)
@@ -136,12 +160,15 @@ class TrueOrFalseQuestion : AppCompatActivity() {
                                     putExtra("respuestaCorrecta", siguiente.respuestaCorrecta)
                                 }
                             }
+
                             else -> null
                         }
-                        nextIntent?.putExtra("avatar", avatar)
+                        nextIntent?.putExtra("avatar", avatares[siguienteJugador])
                         nextIntent?.putExtra("puntos", puntos)
                         nextIntent?.putExtra("indice", indice + 1)
                         nextIntent?.putParcelableArrayListExtra("preguntas", preguntas)
+                        nextIntent?.putStringArrayListExtra("avatares", avatares)
+                        nextIntent?.putExtra("jugadorActual", siguienteJugador)
                         startActivity(nextIntent)
                         finish()
                     } else {

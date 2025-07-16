@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlin.rem
+import kotlin.text.get
 
 class MultipleChoiceQuestion : AppCompatActivity() {
 
@@ -18,11 +20,13 @@ class MultipleChoiceQuestion : AppCompatActivity() {
     private lateinit var textViewPreguntaContenido: TextView
     private lateinit var gridLayoutOpciones: GridLayout
     private lateinit var imageViewAvatar: ImageView
+    private lateinit var avatares: ArrayList<String>
     private var avatar: String? = null
     private var puntos: Int = 0
     private var contenido: String = ""
     private var opciones: List<String> = listOf()
     private var respuestaCorrecta: Int = 1
+    private var jugadorActual: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +47,10 @@ class MultipleChoiceQuestion : AppCompatActivity() {
     }
 
     private fun getDataIntent() {
+        avatares = intent.getStringArrayListExtra("avatares") ?: arrayListOf("img_player1")
+        jugadorActual = intent.getIntExtra("jugadorActual", 0)
+        avatar = avatares[jugadorActual]
+
         contenido = intent.getStringExtra("contenido") ?: ""
         val respuesta1 = intent.getStringExtra("respuesta1") ?: ""
         val respuesta2 = intent.getStringExtra("respuesta2") ?: ""
@@ -51,7 +59,6 @@ class MultipleChoiceQuestion : AppCompatActivity() {
         val idxCorrecta = intent.getIntExtra("respuestaCorrecta", 1) - 1
         opciones = listOf(respuesta1, respuesta2, respuesta3, respuesta4)
         respuestaCorrecta = idxCorrecta
-        avatar = intent.getStringExtra("avatar")
         puntos = intent.getIntExtra("puntos", 0)
     }
 
@@ -64,10 +71,15 @@ class MultipleChoiceQuestion : AppCompatActivity() {
         val textViewPuntos = findViewById<TextView>(R.id.textViewPuntos)
         textViewPuntos.text = "Puntos: $puntos"
 
+        avatar = intent.getStringExtra("avatar")
         avatar?.let {
             val resId = resources.getIdentifier(it, "drawable", packageName)
-            if (resId != 0) imageViewAvatar.setImageResource(resId)
+            if (resId != 0) {
+                imageViewAvatar.setImageResource(resId)
+                imageViewAvatar.clearColorFilter() // Quita el tint si lo tiene
+            }
         }
+
         gridLayoutOpciones.removeAllViews()
         for (opcion in opciones) {
             val button = Button(this)
@@ -112,6 +124,7 @@ class MultipleChoiceQuestion : AppCompatActivity() {
                     dialog.dismiss()
                     val preguntas = intent.getParcelableArrayListExtra<android.os.Parcelable>("preguntas")
                     val indice = intent.getIntExtra("indice", 0)
+                    val siguienteJugador = (jugadorActual + 1) % avatares.size
                     if (preguntas != null && indice + 1 < preguntas.size) {
                         val siguiente = preguntas[indice + 1]
                         val nextIntent = when (siguiente) {
@@ -144,9 +157,11 @@ class MultipleChoiceQuestion : AppCompatActivity() {
                             }
                             else -> null
                         }
-                        nextIntent?.putExtra("avatar", avatar)
+                        nextIntent?.putExtra("avatar", avatares[siguienteJugador])
                         nextIntent?.putExtra("puntos", puntos)
                         nextIntent?.putExtra("indice", indice + 1)
+                        nextIntent?.putStringArrayListExtra("avatares", avatares)
+                        nextIntent?.putExtra("jugadorActual", siguienteJugador)
                         nextIntent?.putParcelableArrayListExtra("preguntas", preguntas)
                         startActivity(nextIntent)
                         finish()

@@ -1,0 +1,7 @@
+<resources>
+    <style name="DialogButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/secondary_cream</item>
+        <item name="android:backgroundTint">@color/primary_provisional_sky</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+</resources>

@@ -59,26 +59,26 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/buttonAjiJalapeno"
+                    android:id="@+id/buttonMermeladaPinaIshpingoZanahoria"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/secondary_dark"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="Ají Jalapeño"
+                    android:text="Mermelada de Piña, Ishpingo y Zanahoria"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
                 <Button
-                    android:id="@+id/buttonAjiHabanero"
+                    android:id="@+id/buttonAjiFrito"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/primary_provisional_sun"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="Ají Habanero"
+                    android:text="Ají Frito"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -91,26 +91,26 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/buttonMermeladaPina"
+                    android:id="@+id/buttonAjiJalapeno"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/primary_provisional_sky"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="Mermelada de Piña"
+                    android:text="Ají Jalapeño"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
                 <Button
-                    android:id="@+id/buttonMermeladaJamaica"
+                    android:id="@+id/buttonMermeladaJamaicaGuayabaChia"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/primary_provisional_selected"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="Mermelada de Jamaica"
+                    android:text="Mermelada de Jamaica, Guayaba y Chía"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
             </LinearLayout>

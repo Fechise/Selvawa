@@ -1,0 +1,27 @@
+<!-- res/layout/dialog_numero_jugadores.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/bg_dialog_avatar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textViewDialogTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona el número de jugadores"
+        android:textSize="20sp"
+        android:textColor="@color/secondary_cream"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp"/>
+
+    <NumberPicker
+        android:id="@+id/numberPickerJugadores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/secondary_cream"
+        />
+</LinearLayout>

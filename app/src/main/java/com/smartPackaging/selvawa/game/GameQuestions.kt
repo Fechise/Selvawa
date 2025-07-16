@@ -14,7 +14,9 @@ import com.smartPackaging.selvawa.game.entity.EntityTrueOrFalseQuestion
 class GameQuestions : AppCompatActivity() {
 
     private lateinit var preguntas: ArrayList<Parcelable>
+    private lateinit var avatares: ArrayList<String>
     private var indiceActual = 0
+    private var jugadorActual = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +27,9 @@ class GameQuestions : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        avatares = intent.getStringArrayListExtra("avatares") ?: arrayListOf("img_player1")
+        indiceActual = intent.getIntExtra("indice", 0)
+        jugadorActual = intent.getIntExtra("jugadorActual", -1)
         initUI()
     }
 
@@ -44,7 +49,11 @@ class GameQuestions : AppCompatActivity() {
             finish()
             return
         }
+        jugadorActual = (jugadorActual + 1) % avatares.size // Avanza turno
+        val avatar = avatares[jugadorActual] // Avatar del jugador en turno
         val pregunta = preguntas[indiceActual]
+        indiceActual++
+
         val intent = when (pregunta) {
             is EntityMultipleChoiceQuestion -> {
                 Intent(this, MultipleChoiceQuestion::class.java).apply {
@@ -54,6 +63,7 @@ class GameQuestions : AppCompatActivity() {
                     putExtra("respuesta3", pregunta.respuesta3)
                     putExtra("respuesta4", pregunta.respuesta4)
                     putExtra("respuestaCorrecta", pregunta.respuestaCorrecta)
+                    putExtra("avatar", avatar)
                 }
             }
 
@@ -61,6 +71,7 @@ class GameQuestions : AppCompatActivity() {
                 Intent(this, TrueOrFalseQuestion::class.java).apply {
                     putExtra("contenido", pregunta.contenido)
                     putExtra("esVerdadero", pregunta.esVerdadero)
+                    putExtra("avatar", avatar)
                 }
             }
 
@@ -73,6 +84,7 @@ class GameQuestions : AppCompatActivity() {
                     putExtra("respuesta3", pregunta.respuesta3)
                     putExtra("respuesta4", pregunta.respuesta4)
                     putExtra("respuestaCorrecta", pregunta.respuestaCorrecta)
+                    putExtra("avatar", avatar)
                 }
             }
 
@@ -80,6 +92,8 @@ class GameQuestions : AppCompatActivity() {
         }
         intent.putExtra("indice", indiceActual)
         intent.putParcelableArrayListExtra("preguntas", preguntas)
+        intent.putStringArrayListExtra("avatares", avatares)
+        intent.putExtra("jugadorActual", jugadorActual)
         startActivity(intent)
         finish()
     }
